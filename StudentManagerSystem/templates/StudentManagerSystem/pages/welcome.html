@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+	<head>
+		<meta charset="UTF-8">
+		<title>学生管理系统</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="{% static '/assets/css/font.css' %}">
+		<link rel="stylesheet" href="{% static '/assets/css/weadmin.css' %}">
+	</head>
+
+	<body>
+		<div class="weadmin-body">
+			<blockquote class="layui-elem-quote">欢迎使用学生管理系统</blockquote>
+			<div class="layui-fluid" style="overflow: hidden;">
+				<div class="layui-row layui-col-space15">
+					<div class="layui-col-md8">
+						<div class="layui-card">
+							<div class="layui-card-header">快捷方式</div>
+							<div class="layui-card-body">
+								<div class="layui-carousel weadmin-shortcut" lay-filter="shortcut" lay-indicator="inside" lay-arrow="none" style="width: 100%; height: 280px;">
+									<div carousel-item="">
+										<ul class="layui-row layui-col-space10 layui-this">
+											<li class="layui-col-xs3">
+												<a href="http://www.layui.com/doc/" target="_blank">
+													<i class="layui-icon">&#xe705;</i>
+													<cite>班级管理</cite>
+												</a>
+											</li>
+											<li class="layui-col-xs3">
+												<a href="http://www.layui.com/admin/" target="_blank">
+													<i class="layui-icon">&#xe606;</i>
+													<cite>学生管理</cite>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<div class="layui-carousel-ind">
+										<ul>
+											<li class="layui-this"></li>
+											<li></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="layui-col-md4">
+						<div class="layui-card">
+							<div class="layui-card-header">
+								班级公告
+							</div>
+							<div class="layui-card-body layui-text weadmin-text">
+								<p>暂无班级公告</p><br><br><br><br><br><br><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-lg12 layui-collapse" style="border: none;">
+				<div class="layui-col-lg6 layui-col-md12">
+					<!--统计信息展示-->
+					<fieldset class="layui-elem-field" style="padding: 5px;">
+						<!--<legend>信息统计</legend>-->
+						<blockquote class="layui-elem-quote font16">信息统计</blockquote>
+						<div class="">
+							<table class="layui-table" lay-even>
+								<thead>
+									<tr>
+										<th>项目</th>
+										<th>作业提交</th>
+										<th>开课次数</th>
+										<th>在线学生</th>
+										<th>平均学习</th>
+										<th>课程变动</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>总计</td>
+										<td>1883</td>
+										<td>173</td>
+										<td>3912</td>
+										<td>331h</td>
+										<td>7次</td>
+									</tr>
+									<tr>
+										<td>今日</td>
+										<td>0</td>
+										<td>3</td>
+										<td>122</td>
+										<td>15m</td>
+										<td>1次</td>
+									</tr>
+									<tr>
+										<td>昨日</td>
+										<td>12</td>
+										<td>3</td>
+										<td>18</td>
+										<td>5m</td>
+										<td>1次</td>
+									</tr>
+									<tr>
+										<td>本周</td>
+										<td>2</td>
+										<td>51</td>
+										<td>589</td>
+										<td>51h</td>
+										<td>4次</td>
+									</tr>
+									<tr>
+										<td>本月</td>
+										<td>1251</td>
+										<td>58</td>
+										<td>2105</td>
+										<td>93h</td>
+										<td>3次</td>
+									</tr>
+									<tr>
+										<td>本学期</td>
+										<td>暂无数据</td>
+										<td>暂无数据</td>
+										<td>暂无数据</td>
+										<td>暂无数据</td>
+										<td>暂无数据</td>
+									</tr>
+								</tbody>
+							</table>
+							<table class="layui-table">
+								<thead>
+									<tr>
+										<th colspan="2" scope="col">本班信息</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th width="30%">班级</th>
+										<td><span id="lbServerName">翻斗幼儿园小班3班</span></td>
+									</tr>
+									<tr>
+										<td>人数</td>
+										<td>51</td>
+									</tr>
+									<tr>
+										<td>课程数</td>
+										<td>7 门</td>
+									</tr>
+									<tr>
+										<td>上课时间</td>
+										<td>8:00am-15:00pm</td>
+									</tr>
+									<tr>
+										<td>课程时长</td>
+										<td>45min</td>
+									</tr>
+									<tr>
+										<td>班主任</td>
+										<td id="firstTime">健康哥哥</td>
+									</tr>
+									<tr>
+										<td>辅导员</td>
+										<td id="lastTime">无</td>
+									</tr>
+									<tr>
+										<td>学期</td>
+										<td id="lastTime">第二学期</td>
+									</tr>
+									<tr>
+										<td>学时</td>
+										<td id="lastTime">1284小时0分钟0秒</td>
+									</tr>
+									<tr>
+										<td>考试</td>
+										<td id="lastTime">本学期无考试内容</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+				<div class="layui-col-lg6 layui-col-md12">
+					<fieldset class="layui-elem-field we-changelog" style="padding: 5px;">
+						<!--更新日志-->
+						<blockquote class="layui-elem-quote font16">班级日志</blockquote>
+						<ul class="layui-timeline" style="height: 729px; overflow-y: auto;">
+							<li class="layui-timeline-item">
+								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+								<div class="layui-timeline-content layui-text">
+									<div class="layui-timeline-title">
+										<h3>作业提交</h3>
+										<span class="layui-badge-rim">2022-12-18</span>
+									</div>
+									<ul>
+										<li>胡图图提交了线性代数作业，请批改！</li>
+										<li>马小亮提交了线性代数作业，请批改！</li>
+										<li>胡图图已订正昨日数据结构作业，请批改！</li>
+									</ul>
+								</div>
+							</li>
+							<li class="layui-timeline-item">
+								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+								<div class="layui-timeline-content layui-text">
+									<div class="layui-timeline-title">
+										<h3>作业提交&待办事项</h3>
+										<span class="layui-badge-rim">2022-12-16</span>
+									</div>
+									<ul>
+										<li>胡图图提交了数据结构作业，请批改！</li>
+										<li>胡图图提交了微分方程作业，请批改！</li>
+										<li>铁甲小宝提交了微分方程作业，请批改！</li>
+										<li>牛爷爷提交了离校申请</li>
+										<li>铁甲小宝提交了核酸报告</li>
+										<li>胡图图提交了核酸报告</li>
+									</ul>
+								</div>
+							</li>
+							<li class="layui-timeline-item">
+								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+								<div class="layui-timeline-content layui-text">
+									<div class="layui-timeline-title">
+										<h3>校内通知</h3>
+										<span class="layui-badge-rim">2022-12-09</span>
+									</div>
+									<ul>
+										<li>【最新通知】根据学校优化疫情防控最新要求，12月10日开始，核酸采样地点统一设置在核酸小屋，每天下午13：30-17：00。</li>
+										<li>接到翻斗街道办通知，今日全员核酸取消，改为20%常态化，目前已测2700人，已满足常态化人数要求。请各位老师通知全体学生，没做核酸的可以不用前往了。上午会暂时留翻斗花园一组，给有需要的人员检测。</li>
+									</ul>
+								</div>
+							</li>
+							<li class="layui-timeline-item">
+								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+								<div class="layui-timeline-content layui-text">
+									<div class="layui-timeline-title">
+										<h3>暂无其他消息</h3>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../lib/layui/layui.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		layui.extend({
+			admin: '{/}../static/js/admin',
+		});
+		layui.use(['jquery', 'element','util', 'admin', 'carousel'], function() {
+			var element = layui.element,
+				$ = layui.jquery,
+				carousel = layui.carousel,
+				util = layui.util,
+				admin = layui.admin;
+			//建造实例
+			carousel.render({
+				elem: '.weadmin-shortcut'
+				,width: '100%' //设置容器宽度				
+				,arrow: 'none' //始终显示箭头	
+				,trigger: 'hover'
+				,autoplay:false
+			});
+			
+			carousel.render({
+				elem: '.weadmin-notice'
+				,width: '100%' //设置容器宽度				
+				,arrow: 'none' //始终显示箭头	
+				,trigger: 'hover'
+				,autoplay:true
+			});
+			
+			$(function(){
+				setTimeAgo(2018,0,1,13,14,0,'#firstTime');
+				setTimeAgo(2019,5,20,16,0,0,'#lastTime');
+			});
+			function setTimeAgo(y, M, d, H, m, s,id){
+			    var str = util.timeAgo(new Date(y, M||0, d||1, H||0, m||0, s||0));
+			    $(id).html(str);
+			    console.log(str);
+			 };
+		});
+	</script>
+
+</html>

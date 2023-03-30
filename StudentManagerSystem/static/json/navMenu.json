@@ -1,0 +1,34 @@
+{
+	"status": 0,
+	"msg": "ok",
+	"data": [
+		{
+			"id": 0,
+			"name": "首页",
+			"icon": "&#xe726;",
+			"url": "/welcome",
+			"children": []
+		},
+		{
+			"id": 1,
+			"name": "学生管理",
+			"icon": "&#xe6b8;",
+			"url": "/student",
+			"children": []
+		},
+		{
+			"id": 2,
+			"name": "成绩管理",
+			"icon": "&#xe705;",
+			"url": "/mark",
+			"children": []
+		},
+		{
+			"id": 3,
+			"name": "班级管理",
+			"icon": "&#xe6ce;",
+			"url": "/class",
+			"children": []
+		}
+	]
+}
